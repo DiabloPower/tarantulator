@@ -1,4 +1,3 @@
-local transfer_efficiency = 0.05
 local global = {}
 
 script.on_nth_tick(240, function(event)
@@ -11,14 +10,17 @@ script.on_nth_tick(240, function(event)
                 if equipment.max_energy and equipment.energy then
                     local missing = equipment.max_energy - equipment.energy
                     if missing > 0 and spider.burner and spider.burner.remaining_burning_fuel then
-                        if spider.burner.remaining_burning_fuel < missing / transfer_efficiency then
-                            equipment.energy = equipment.energy + spider.burner.remaining_burning_fuel * transfer_efficiency
-                            spider.burner.remaining_burning_fuel = 0
-                            break
-                        else
-                            spider.burner.remaining_burning_fuel = spider.burner.remaining_burning_fuel - missing / transfer_efficiency
-                            equipment.energy = equipment.energy + missing
-                        end
+                        if spider.burner and spider.burner.remaining_burning_fuel and spider.burner.remaining_burning_fuel > 0 then
+                            if missing > 0 then
+                                if spider.burner.remaining_burning_fuel < missing / global.transfer_efficiency then
+                                    equipment.energy = equipment.energy + spider.burner.remaining_burning_fuel * global.transfer_efficiency
+                                    spider.burner.remaining_burning_fuel = 0
+                                else
+                                    spider.burner.remaining_burning_fuel = spider.burner.remaining_burning_fuel - (missing / global.transfer_efficiency)
+                                    equipment.energy = equipment.energy + missing
+                                end
+                            end
+                        end                        
                     end
                 end
             end
@@ -54,7 +56,8 @@ script.on_event(defines.events.on_player_removed_equipment, function(event)
 end)
 
 local function setup()
-	global.tarantulators = global.tarantulators or {}
+    global.transfer_efficiency = settings.startup["tarantulator-energy-grid-efficiency"].value / 100 * 0.05
+    global.tarantulators = global.tarantulators or {}
 end
 
 script.on_init(setup)
@@ -62,6 +65,7 @@ script.on_configuration_changed(setup)
 
 script.on_event(defines.events.on_tick, function(event)  
     if math.fmod(event.tick, 60) == 0 then
-        game.forces["player"].friendly_fire = false
+        local friendly_fire_setting = settings.startup["tarantulator-enable-friendly-fire"].value
+        game.forces["player"].friendly_fire = friendly_fire_setting
     end
 end)

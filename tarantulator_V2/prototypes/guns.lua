@@ -11,11 +11,11 @@ data:extend({
     stack_size = 1,
     attack_parameters = {
         type = "projectile",
-        range = 50,
-        min_range = 8,
+        range = 60,
+        min_range = 15,
         cooldown = 140,
         ammo_category = "tarantulator-ammo",
-        projectile_creation_distance = 8,
+        projectile_creation_distance = 15,
         projectile_center = {0, 0},
         sound = {
             {

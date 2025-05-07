@@ -1,4 +1,35 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.0
+Date: 2025-05-07
+  Changes:
+    - satellite readded into the recipe (if spaceage is not present)
+    - alternate recipe for spaceage: satellite = 2 changed for: radar = 2
+    - minimum Range for Railgun: from 8 to 15
+    - maximum Range for Railgun: from 50 to 60
+  Added:
+    - Mod Settings
+      - Enable friendly fire (default: off, alternate: on)
+      - Engine Settings (default: burner, alternate: void)
+      - Engine efficiency Settings (base 0.5%, default: 100, alternate: 1-1000)
+      - Energy grid efficiency Settings (base 0.05%, default: 100m, alternate: 1-1000)
+      - Early Tarantulator (after Tank/Assault Spidertron & after Nuclear research...)
+      - Integration with my Assault Spidertron Mod (Techtree)
+      - automatic weapon cycling Setting
+      - Weapon Loadout Settings
+        - Rocket launcher: Enable/disable
+        - Rocket launcher amount: 1-4
+        - Railgun: Enable/disable
+        - Railgun amount: 1-4
+    - alternate recipe for early Tarantulator Mod Setting
+    - alternate recipe if Assault Spidertron Mod is present and integration Mod Setting selected
+    - German Translation
+    - French Translation
+---------------------------------------------------------------------------------------------------
+Version: 2.0.1
+Date: 2025-05-07
+  Changes:
+    - removed satellite from the recipe (for now)
+---------------------------------------------------------------------------------------------------
 Version: 2.0.0
 Date: 2025-05-06
   Changes:
@@ -13,7 +44,7 @@ Date: 2025-05-06
     - repositioning of all Legs
     - resistances for Legs
     - resistances for Torso
-    - energy grid efficiency changed from 0.015 (about 0.6MJ) to 0.5 (about 2MJ) every 240 ticks/4 seconds
+    - energy grid efficiency changed from 0.015 (about 0.6MJ) to 0.5 (about 200MJ) every 240 ticks/4 seconds
     - naming: Laser to Railgun (because it always has been)
   Added:
     - ammo.lua

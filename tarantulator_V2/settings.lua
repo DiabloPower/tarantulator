@@ -42,11 +42,19 @@ data:extend({
     },
     {
         type = "string-setting",
-        name = "tarantulator-assauslt-spidertron-integration",
+        name = "tarantulator-assault-spidertron-integration",
         setting_type = "startup",
         allowed_values = {"default", "assault-spidertron"},
         default_value = "default",
         order = "a-f"
+    },
+    {
+        type = "string-setting",
+        name = "tarantulator-diet",
+        setting_type = "startup",
+        allowed_values = {"default", "medium", "skinny"},
+        default_value = "default",
+        order = "a-g"
     },  
     {
         type = "string-setting",
@@ -54,7 +62,7 @@ data:extend({
         setting_type = "startup",
         allowed_values = {"no", "yes"},
         default_value = "no",
-        order = "a-g"
+        order = "a-h"
     },
     {
         type = "bool-setting",

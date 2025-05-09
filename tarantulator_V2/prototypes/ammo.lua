@@ -30,7 +30,7 @@ data:extend({
                 action_delivery = {
                     type = 'projectile',
                     projectile = 'tarantulator-railgun-shell',
-                    starting_speed = 4.0,
+                    starting_speed = 8.0,
                     target_effects = {
                         {
                             entity_name = 'big-explosion',

@@ -17,6 +17,7 @@ This mod adapts the **Tarantulator** created by [notnotmelon](https://mods.facto
 
 When Size matters! - Tarantulator, Spidertron, [Assault Spidertron](https://github.com/DiabloPower/assault_spidertron)
 ![Tarantulator](https://github.com/DiabloPower/tarantulator/blob/main/Screenshots/Screenshot_tarantulator_02.png?raw=true)
+![settings_01](https://github.com/DiabloPower/tarantulator/blob/main/Screenshots/Screenshot_settings_01.png?raw=true)![settings_02](https://github.com/DiabloPower/tarantulator/blob/main/Screenshots/Screenshot_settings_02.png?raw=true)
 
 ## Credits
 - A big thank you to [notnotmelon](https://mods.factorio.com/user/notnotmelon) for the original mod!

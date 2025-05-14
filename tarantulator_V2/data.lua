@@ -39,10 +39,8 @@ data:extend({
 
 -- Adds extra resistances if the "BobEnemies" mod is active
 if mods.bobenemies then
-    table.insert(data.raw['spider-vehicle']['tarantulator'].resistances, {type = 'plasma', decrease = 6, percent = 50})
-    table.insert(data.raw['spider-vehicle']['tarantulator'].resistances, {type = 'bob-pierce', decrease = 6, percent = 50})
-    table.insert(data.raw['spider-vehicle']['tarantulator']['spider-engine'].resistances, {type = 'plasma', decrease = 10, percent = 100})
-    table.insert(data.raw['spider-vehicle']['tarantulator']['spider-engine'].resistances, {type = 'bob-pierce', decrease = 10, percent = 100})
+    table.insert(data.raw['spider-vehicle']['tarantulator'].resistances, {type = 'bob-pierce', decrease = 6, percent = 50})    
+    table.insert(data.raw['spider-vehicle']['tarantulator']['spider_engine'].resistances, {type = 'bob-pierce', decrease = 10, percent = 100})
 end
 
 -- Modifies Tarantulator's recipe if the "Space Age" mod is present

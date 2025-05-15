@@ -1,4 +1,5 @@
 path = "__tarantulator_V2__"
+local get_spidertron_legs = require(path .. "/utils.lua").get_spidertron_legs
 
 local leg_hit_the_ground_trigger = {{
 	offset_deviation = {{-0.2, -0.2}, {0.2, 0.2}},
@@ -68,64 +69,7 @@ data:extend({
         spider_engine = {
             initial_movement_speed = 0.5,
             movement_acceleration = 1.0,
-            legs = {
-                {
-                    leg = "tarantulator-leg",
-                    mount_position = util.by_pixel(15, -20),
-                    ground_position = {3.375 * 2, -3.75},
-                    blocking_legs = {2},
-                    walking_group = 1,
-                },
-                {
-                    leg = "tarantulator-leg-small",
-                    mount_position = util.by_pixel(25, 0),
-                    ground_position = {3.5, -1.25},
-                    blocking_legs = {1, 3},
-                    walking_group = 2,
-                },
-                {
-                    leg = "tarantulator-leg-small",
-                    mount_position = util.by_pixel(15, 18),
-                    ground_position = {3.5, 1.25},
-                    blocking_legs = {2},
-                    walking_group = 3,
-                },
-                {
-                    leg = "tarantulator-leg",
-                    mount_position = util.by_pixel(-15, -20),
-                    ground_position = {-3.375 * 2, -3.75},
-                    blocking_legs = {5},
-                    walking_group = 4,
-                },
-                {
-                    leg = "tarantulator-leg-small",
-                    mount_position = util.by_pixel(-25, 0),
-                    ground_position = {-3.5, -1.25},
-                    blocking_legs = {4, 6},
-                    walking_group = 5,
-                },
-                {
-                    leg = "tarantulator-leg-small",
-                    mount_position = util.by_pixel(-15, 18),
-                    ground_position = {-3.5, 1.25},
-                    blocking_legs = {5},
-                    walking_group = 6,
-                },
-                {
-                    leg = "tarantulator-leg",
-                    mount_position = util.by_pixel(-15, 20),
-                    ground_position = {-3.375 * 2, 3.75},
-                    blocking_legs = {8},
-                    walking_group = 7,
-                },
-                {
-                    leg = "tarantulator-leg",
-                    mount_position = util.by_pixel(15, 20),
-                    ground_position = {3.375 * 2, 3.75},
-                    blocking_legs = {7},
-                    walking_group = 8,
-                }
-            },                 
+            legs = get_spidertron_legs(),             
 			military_target = 'spidertron-military-target',
 			damage_per_hit = 0,
             resistances =

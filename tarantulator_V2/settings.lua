@@ -1,4 +1,13 @@
 data:extend({
+    -- Settign to enable Arachnophobia mode
+    {
+        type = "string-setting",
+        name = "tarantulator-enable-arachnophobia-mode",
+        setting_type = "startup",
+        allowed_values = {"active", "inactive"},
+        default_value = "inactive",
+        order = "a-1"
+    },
     {
         type = "bool-setting",
         name = "tarantulator-enable-friendly-fire",
